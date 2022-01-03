@@ -6,3 +6,5 @@ const isPalindome = (word) => {
 
     return word === reversedWord;
 };
+
+console.log(isPalindome("tacocat") ? "PALINDROME" : "NOT A PALINDROME");
