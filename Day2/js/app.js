@@ -29,14 +29,13 @@ function updateTasksStatus(currentBranch, task) {
     updateLocalStorage();
 }
 
-function updateTaskOrder(branch, movedTask, taskBefore) {
-    const movedIndex = tasks[branch].indexOf(movedTask);
-    tasks[branch].splice(movedIndex, 1);
-    let toIndex = tasks[branch].indexOf(taskBefore);
+function updateTaskOrder(movedTask, taskBefore) {
+    removeTaskItem("pending", movedTask);
+    let toIndex = tasks.pending.indexOf(taskBefore);
     if (toIndex === -1) {
-        toIndex = tasks[branch].length;
+        toIndex = tasks.pending.length;
     }
-    tasks[branch].splice(toIndex, 0, movedTask);
+    tasks.pending.splice(toIndex, 0, movedTask);
     updateLocalStorage();
 }
 
@@ -72,6 +71,7 @@ function createDraggableLi() {
             draggedElement.parentElement === this.parentElement &&
             draggedElement !== this
         ) {
+            // This enables the drop event to activate on allowable elements
             event.preventDefault();
             this.classList.add("drag-over");
         }
@@ -82,16 +82,9 @@ function createDraggableLi() {
     }
 
     function drop() {
-        const currentBranch = getCurrentTaskBranch(this.parentElement);
-
-        // task.children [
-        // 0 - checkbox
-        // 1 - p (Task Name)
-        // 2 - button
-        // ]
         const taskToMove = getTaskFromLi(draggedElement);
         const taskBefore = getTaskFromLi(this);
-        updateTaskOrder(currentBranch, taskToMove, taskBefore);
+        updateTaskOrder(taskToMove, taskBefore);
 
         this.classList.remove("drag-over");
         this.parentElement.insertBefore(draggedElement, this);
@@ -117,6 +110,8 @@ function createDraggableLi() {
 
     liTask.addEventListener("dragend", function () {
         draggedElement = null;
+
+        // Remove placeholder element
         const parentChildren = this.parentElement.children;
         this.parentElement.removeChild(
             parentChildren[parentChildren.length - 1]
