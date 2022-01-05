@@ -17,7 +17,9 @@ function constructDishesHTML(filterCourse) {
 
     const dishItems = dishesList.map(function (dish) {
         return `<div class="dish">
-            <img src="${dish.imageURL}" />
+            <div class="img-container">
+                <img src="${dish.imageURL}" />
+            </div>
             <div class="dish-text">
                 <label>${dish.title}</label>
                 <i>${dish.description}</i>

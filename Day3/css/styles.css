@@ -28,6 +28,7 @@ body {
     display: flex;
     flex-direction: column;
     row-gap: 10px;
+    margin-bottom: 20px;
     /* border: 2px dashed navy; */
 }
 
@@ -41,9 +42,11 @@ body {
     column-gap: 20px;
 }
 
-.dish img {
+.img-container img {
     width: 200px;
     height: 200px;
+    border: 1px solid rgba(0, 0, 0, 0.5);
+    border-radius: 100px;
 }
 
 .dish-text {
@@ -52,7 +55,7 @@ body {
     padding: 15px;
     width: calc(100% - 200px);
     height: calc(100% - 30px);
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 20px;
 }
 
@@ -68,7 +71,7 @@ body {
 
 @media screen and (min-width: 451px) {
     #dishesContainer {
-        margin: 0 20px;
+        margin: 0 20px 20px;
         padding: 20px;
         border: 2px dashed navy;
         border-radius: 20px;
