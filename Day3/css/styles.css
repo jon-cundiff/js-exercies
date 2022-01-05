@@ -1,0 +1,86 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 2em;
+}
+
+.button {
+    width: 6em;
+    border: 2px solid navy;
+    background-color: navy;
+    color: white;
+    padding: 10px;
+}
+
+.button.active {
+    background-color: lightblue;
+    color: black;
+}
+
+#dishesContainer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    /* border: 2px dashed navy; */
+}
+
+.dish {
+    width: calc(100% - 20px);
+    background-color: rgba(135, 206, 235, 0.2);
+    padding: 10px;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    column-gap: 20px;
+}
+
+.dish img {
+    width: 200px;
+    height: 200px;
+}
+
+.dish-text {
+    display: flex;
+    flex-direction: column;
+    padding: 15px;
+    width: calc(100% - 200px);
+    height: calc(100% - 30px);
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 20px;
+}
+
+.dish-text label {
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+.dish-text i {
+    font-size: 0.9em;
+    margin: 5px 0;
+}
+
+@media screen and (min-width: 451px) {
+    #dishesContainer {
+        margin: 0 20px;
+        padding: 20px;
+        border: 2px dashed navy;
+        border-radius: 20px;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        background-color: rgba(210, 180, 140, 0.3);
+    }
+
+    .dish {
+        max-width: 24em;
+        border: 2px dotted navy;
+        border-radius: 15px;
+    }
+}
