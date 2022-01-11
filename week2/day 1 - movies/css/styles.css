@@ -1,0 +1,122 @@
+body {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#header {
+    width: 100%;
+    border-bottom: 2px dashed navy;
+    padding-bottom: 1.5em;
+}
+
+#searchForm {
+    width: 100%;
+    display: flex;
+    column-gap: 1em;
+    justify-content: center;
+}
+
+#searchInput {
+    width: 75%;
+    height: 2em;
+}
+
+#searchButton {
+    width: 20%;
+}
+
+#container {
+    padding-top: 1em;
+    display: flex;
+    flex-direction: column-reverse;
+}
+
+#movieList {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 1em;
+    row-gap: 2em;
+}
+
+.movie-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    width: 10em;
+    text-align: center;
+    text-decoration: none;
+    color: navy;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: bold;
+    height: 18em;
+}
+
+.movie-item img {
+    margin-top: 4px;
+    width: 100%;
+}
+
+#movieDetails {
+    display: none;
+    background-color: rgb(133, 205, 250, 0.2);
+    flex-direction: column;
+    column-gap: 2em;
+    padding: 2em;
+}
+
+#movieDetails.active {
+    display: flex;
+}
+
+#movieDetails .title-poster {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.detail-text {
+    width: 200px;
+}
+
+#errorAlert {
+    display: none;
+}
+
+#errorAlert.error-active {
+    display: block;
+    width: 90%;
+    margin: 0 auto;
+    text-align: center;
+    font-size: larger;
+    font-weight: bold;
+    border: 3px solid darkred;
+    color: darkred;
+    border-radius: 25px;
+    padding: 20px;
+    background-color: rgba(255, 182, 193, 0.6);
+}
+
+h1 {
+    text-align: center;
+}
+
+@media screen and (min-width: 550px) {
+    #container {
+        flex-direction: row;
+        width: 100%;
+    }
+
+    #movieList {
+        column-gap: 2em;
+    }
+
+    #movieDetails {
+        flex-direction: row;
+        border-left: 3px dotted blue;
+        max-width: 600px;
+    }
+}
