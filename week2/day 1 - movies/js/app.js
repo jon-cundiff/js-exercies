@@ -5,7 +5,7 @@ const movieList = document.getElementById("movieList");
 const movieDetails = document.getElementById("movieDetails");
 const errorAlert = document.getElementById("errorAlert");
 
-const baseurl = "http://www.omdbapi.com";
+const baseurl = "https://www.omdbapi.com";
 const apiKey = "5fe80d12";
 
 function executeXMLGetRequest(url, callback) {

@@ -1,0 +1,157 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    background-color: beige;
+}
+
+h1,
+h2 {
+    text-align: center;
+    margin: 1em auto 0;
+}
+
+.button {
+    border-radius: 20px;
+    border: none;
+    box-shadow: 2px 2px 10px rgba(10, 10, 10, 0.5);
+    color: white;
+    font-size: 1.1em;
+}
+
+.button:active {
+    background-color: #222 !important;
+    border: 0.1em solid white;
+    font-size: 0.9em;
+}
+
+#searchButton {
+    background-color: forestgreen;
+}
+
+#newOrderButton {
+    background-color: darkslateblue;
+}
+
+#header {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    padding: 1em;
+    box-shadow: 2px 15px 15px rgba(10, 10, 10, 0.1);
+}
+
+#header button {
+    padding: 10px;
+}
+
+#ordersContainer {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    row-gap: 1em;
+}
+
+.order {
+    position: relative;
+    margin: 2px;
+    padding: 1.5em;
+    border: 2px solid darkslategrey;
+    border-radius: 20px;
+    background-color: rgba(144, 238, 144, 0.4);
+}
+
+.cancel-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    color: white;
+    background-color: rgb(250, 120, 120);
+    border: none;
+    width: 25px;
+    padding: 5px;
+    font-weight: bolder;
+    font-size: 0.9em;
+    border-radius: 21px;
+}
+
+.cancel-button:active {
+    background-color: rgb(200, 100, 100);
+    color: rgb(200, 200, 200);
+}
+
+#newOrderDisplay {
+    display: none;
+}
+
+#newOrderDisplay.new-order-active {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+#newOrderContainer {
+    position: absolute;
+    width: 400px;
+    height: 410px;
+    top: calc(50% - 250px); /* slightly above center */
+    left: calc(50% - 200px);
+    border-radius: 25px;
+    padding: 2em 4em;
+    background-color: white;
+}
+
+#newOrderContainer h2 {
+    margin: 0 auto 1em;
+}
+
+#newOrderForm {
+    display: flex;
+    flex-direction: column;
+    row-gap: 1.4em;
+}
+
+#newOrderForm section {
+    display: flex;
+    flex-direction: column;
+    row-gap: 3px;
+}
+
+#newOrderSubmitButton {
+    color: black;
+    background-color: lightgreen;
+    padding: 10px;
+}
+
+@media screen and (min-width: 550px) {
+    #header {
+        justify-content: center;
+        flex-direction: row;
+        column-gap: 1em;
+    }
+
+    #header input {
+        width: 80%;
+    }
+
+    #header button {
+        width: 15%;
+    }
+
+    #ordersContainer {
+        margin: 1em 1.5em;
+        flex-direction: row;
+        column-gap: 1em;
+    }
+
+    .order {
+        width: 300px;
+    }
+}
